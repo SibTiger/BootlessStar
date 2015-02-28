@@ -1,0 +1,17 @@
+What is Batch Shell on Windows?
+================================
+* http://en.wikipedia.org/wiki/Batch_file
+
+
+
+Batch Shell Documentation
+================================
+* http://en.wikibooks.org/wiki/Windows_Batch_Scripting
+
+
+
+List of external\internal Commands
+================================
+* http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/ntcmds.mspx?mfr=true
+* http://ss64.com/nt/
+* http://www.robvanderwoude.com/batchcommands.php

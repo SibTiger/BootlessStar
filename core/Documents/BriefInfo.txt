@@ -1,0 +1,43 @@
+This documentation is based on Bootless Star version 1.5 (Codenamed Aditi)
+
+
+
+Table of Contents
+*   What is the purpose of this program (Bootless Star)
+*   Bootless Star Early Beta’s (History Stance) and Now
+*   Developing New Project Modules for Bootless Star
+*   License and General Permissions
+
+
+
+
+What is the purpose of this program?
+----------------------------------------
+========================================
+Bootless Star hosts an environment for external modules to take complete advantage of utilizing while offering complete broadness in flexibility.  The term ‘environment’ meaning in this case: typical settings, programs and software that is available on the host system, and user customizations.  In addition, the Bootless Star program does _NOT_, by any means, runs any operations besides generating and managing the environment.  Thus meaning, in order to perform any operations, there must be scripts designed to work within Bootless Star’s environment.
+
+
+
+
+Bootless Star; Early Beta’s (History Stance) and Now
+----------------------------------------
+========================================
+Bootless Star’s previous focus during the beta versions (since Beta 1 through Beta 7.x), was to only compile Doom Builder 2 and later – Doom Builder 64 and GZDoom Builder.  Originally, the code base was never supposed to escalate any-further and was considered to stay locked with no further improvements.  Though, after working on several other Batch shell programs: HotCompiler (the first ZIP\7z compiler for the TGRDM3 project), and the DeLorean (a user and system backup program), it became a chore to implement fixes and patches across all three programs.  The vision for Beta 8 was to change the fundamental aspects of Bootless Star and its focus from being hard-coded and limited to being – boundless and open.  With version 1.00 (released: 04 July. 2013), this allowed easier maintenance within the programs and made development easier – which allowed more features and further stability.
+
+
+
+
+Developing New Project Modules for Bootless Star
+----------------------------------------
+========================================
+This section is not to help teach those that want to create programs within the Batch shell that works with Bootless Star, but instead – help give out some useful links:
+Bootless Star’s hosted environment variables: See ‘Variables.txt’ within the documents.
+Programming within the Windows Batch Shell: See ‘HowToScriptBatchShell.txt’ within the documents.
+
+
+
+
+License and General Permissions
+----------------------------------------
+========================================
+See ‘Legal.txt’ within the documents.

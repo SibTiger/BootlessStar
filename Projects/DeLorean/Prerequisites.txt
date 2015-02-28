@@ -1,0 +1,14 @@
+Prerequisites
+======================
+
+
+Foundation Requirements:
+--------
+    Bootless Star 1.5 or later
+
+
+
+Necessary:
+--------
+    7Zip
+        http://www.7-zip.org/

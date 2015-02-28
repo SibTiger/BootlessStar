@@ -1,0 +1,19 @@
+Directory Hierarchy Tree
+
+Legend:
+    Dir = Directory
+    Exe = Executable File
+    Txt = Text file
+
+
+.\BootlessStar
+    |_[Dir] Documents
+        |_[Txt] *.txt
+    |_[Dir] Presets
+        |_[Exe]*.bat
+    |_[Dir] Projects
+        |_[Exe]*.bat
+            |_[Dir]$ProgramName
+    |_[Dir] Scripts
+        |_[Exe]*.bat
+    |_[Exe] BootlessStar.bat

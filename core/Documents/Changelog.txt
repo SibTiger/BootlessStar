@@ -1,0 +1,478 @@
+Version 1.5.3 [revision 973]
+==========================
+--------------------------
+7 October. 2014
+----
+
+* The program will now properly check to see if the host system has Multithreading capabilities available for 7Zip software.  If the program detects that the host system does now have the capability - the multithreading feature will be disabled, otherwise - it will be enabled.
+
+
+
+Version 1.5.2 [revision 971]
+==========================
+--------------------------
+6 July. 2014
+----
+
+* Added two new documents: BriefInfo.txt and Modules_OR_ExternalScripts.txt
+
+
+
+Version 1.5.1 [revision 969]
+==========================
+--------------------------
+4 July. 2014
+----
+
+* Fixed an incorrect comment string with the ModuleExecuteSharingWindow variable.
+
+
+
+Version 1.5 [revision 876]
+==========================
+--------------------------
+31 May. 2014
+----
+
+* Bootless Star will attempt to check if the program has Administrative\Root access; modules can check the value with the identifier 'Detect_RootAccess'.  When true, the program has Administrative privileges.
+* It is now possible for the user to execute multiple modules at once; modules (if enabled) can be executed in their own terminal window.  This can be helpful for:
+    1) Multi-tasking
+    2) Avoid buggy modules from crashing the parent fork
+* The user can now specify which mass copying software they prefer.  However, modules can still overwrite the user's preference.
+* If selecting Robocopy as the preferred mass copying software, the program will determine and prompt the user if:
+    1) The program is not executed with enough privileges.
+    2) If Robocopy could not be detected on the host system.
+* Reorganized the settings [control panel] menus
+* Revised the compiler; the program has been reorganized - but the overall structure has not changed.
+* Fixed a potential security vulnerability when the user is defining a new 7Zip archive key.  The vars: STDIN and working variables were never cleared.
+* The user can no longer enable 7Zip key when the key was never defined.
+* Revised the compatibility check to be much tighter; the program now demands the %OS% value must be Windows_NT in order for the program to continue further with the execution, instead of MS_DOS that was used before and terminating the program if true.
+* When managing the directory setup, undefined variables would not display properly -- An error string will take its place until the value has been declared.
+* Revised a few borders that is printed on the screen.
+* Reorganized the main menu.
+* Modified separators used within the code
+* The user now has the ability to customize the switches used in: COPY (intCMD), XCOPY, and ROBOCOPY.  Check the Variables.txt for a complete list of what identifiers are available.
+
+
+
+Version 1.4 [revision 787]
+==========================
+--------------------------
+23 May. 2014
+----
+
+* The program's title will now update and display what script\module is being executed.
+* Updated the website location
+* Corrected an unfinished comment in function ':ModuleUpdates_OpenWeb'
+* Revised: !ERR_CRIT -> !ERR_CRIT!
+* Changed the meaning of "Launch External Modules" -> "Run External Scripts"
+* Changed the meaning of "Compile Project" -> "Run Project Module"
+* Lowered the value of the variable defined "RoboCopyMultileThreads" which was previously '8' is now '2'.  This should be much easier on abroad systems.
+
+
+
+Version 1.3.1 [revision 706]
+==========================
+--------------------------
+29 April. 2014
+----
+
+* When the detection is being set with the PathPython3, the default initialization was never set correctly nor in the proper Batch Sell syntax.
+
+
+
+Version 1.3 [revision 677]
+==========================
+--------------------------
+17 Mar. 2014
+----
+
+* The core will now try to detect the extCMD Robocopy.  This was added in to make sure that the host system actually had this program installed, as previous versions of Windows [Windows XP and earlier] did _NOT_ have this software bundled into the OS.  However, it was possible to download it from Microsoft, if the user knew about it or even needed it.
+* The core will now try to detect Python v2.7, and Python v3.3!  The user also has the ability to modify the targets aswell.
+* Added the ability for users to expeditiously install new scripts!  The concept is to simply open a new window that directs the user to a specific directory, which from there they can simply drag-and-drop the batch script file.
+
+
+
+Version 1.2.1 [revision 592]
+==========================
+--------------------------
+25 Feb. 2014
+----
+
+* Visual Studio variables no longer attaches to the vsvars32.bat file.
+
+
+
+Version 1.2 [revision 549]
+==========================
+--------------------------
+19 Feb. 2014
+----
+
+* Rewrote the core; no more spaghetti madness anymore!
+* Foundation has generally changed!
+* Project Directory targets are no longer hardcoded into the core anymore.  Modules, for now on must handle this themselves.
+* Thrashed superfluous variables and legacy variables.
+* Expunged old error database.
+* Changed the entire 'Legal' section.
+* Saved user configurations now contain a unique key, which will allow modules to easily use as a saved filename for their own configurations.  This will avoid issues with files that might have the same filename but different capitalizations.
+* Saved configurations are no longer treated as 'one file' for all modules, instead the core saved preset is for the core and the modules is set in their own files.
+* Added the Dashboard Viewer Tool!  This is designed to display important and brief information on the terminal.
+* Added the ability to check for updates.
+* Added a new variable which will contain the program's release date.
+* During the initialization period, the program will now filter the host system's %DATE% and %TIME%.  This will allow modules to use this information as filenames or for other means.
+* Removed JumperScript implementation.  This wont be implemented any time soon, or ever at all.
+* During the initialization period, the core will attempt to find the host system's .NET foundations.
+* During the initialization period, the core will try to find Visual Studio, HTML Workshop, Inno setup, 7Zip, and SVN commandline tools.
+* Revised some declarations and identifiers.  Most modules will have to be updated to work with the core's new foundation.
+
+
+
+Version 1.1 [revision 62]
+==========================
+--------------------------
+18 July. 2013
+----
+
+* Added the ability to check if the host system is compatible with the Bootless Star program.
+* Minor changes to the RoboCopyArg variable.
+* Added a new variable 'RoboCopyMultiThreads'.
+
+
+
+Version 1.00 [revision 6:7]
+==========================
+--------------------------
+04 July. 2013
+----
+
+* Code Name: Aditi
+* Foundation Name: Ruby
+* Updated the hooking algorthim; this is based from 'Whine'.
+* Created a new method: UserInput, Banner, and ClearScreen, this will help to reduce some redundancy within the code.
+* Generally updated the interface.
+* Generally rewrote most of the methods.
+* It is no longer possible to switch copying software to Robocopy, instead - XCopy is going to be used.
+* Fixed a crash that can occur when inputting a directory path for Visual Studio and HTML Workshop.
+* ChocoRenderLimits project has been included.
+* Refined the error detection algorithm (Batch treats processes with %ErrorLevel% calls differently....)
+* Implement Parameter support; this is strict and not flexible.  ProgramName.bat -Jumper File.bat -Project Project.bat
+* Added a few more projects to the user's project roots section in Environment Settings.  {Odamex; Zandronum; GZDoom; ZDoom; SLADE3; ECWolf; Eterntiy; Vavoom; Doomseeker}
+* Added a variable path for MinGW in the user configurations.
+* Added 7Zip variables to support: Verify, Copy method, Encryption, compression algorithm, compression pass or depth, archive key, and path.
+* Added a generalized priority request.
+* Added a Boolean variable [CallExplorerCommands] for calling Explorer requests.  This can be useful for opening the file manage to a specific directory and even highlighting a specific folder or file.
+* Added 'Advanced Settings' which holds some settings that average users wouldn't care about.  This can be found within the main settings.
+* Removed the Terms of Agreement.  I am not a lawyer, nor have any desire to be one, but instead I am a creator.
+* Added descriptions within the setting submenus.
+* Any called modules or scripts will now launch in a new screen session, if they prematurely terminate - it wont affect the main program Bootless Star.
+* Enabled Extended features when using 'MORE', this is used within the viewing documents within the program.
+* Updated the following variables:
+    UsePCSpeaker: Deprectated and has been replaced with %UseBell%
+    PCSpeaker: Deprecated and has been replaced with %SND_BELL%
+    Projects: Deprecated
+    Plugins: Deprecated
+    DestroyBuild: Deprecated
+    HeadBorder: Deprecated
+    HeadTitle: Deprecated
+    ChoiceSel: Deprecated
+    ChoiceKC: Deprecated
+    ChoiceYN: Deprecated
+    ChoiceTF: Deprecated
+    ChoiceNum: Deprecated
+    ChoiceAlp: Deprecated
+    ProcessValue: Deprecated
+    NavVar: Deprecated
+    cacheNavVar: Deprecated
+
+
+
+Beta 7.8
+==========================
+--------------------------
+29 June. 2013
+----
+
+* When attempting to compile the 'Doom Builder 64' project, the 'GZDoom Builder' core would be compiled instead of the 'Doom Builder 64' core.
+
+
+
+Beta 7.7
+==========================
+--------------------------
+19 June. 2013
+----
+
+* Updated GZDoom Builder directory paths to support the latest changes.
+* Added missing plugins from BootlessStarGZDB
+* Updated default plugins and extra plugins for the following projects: GZDoom Builder
+        I can't reach the other developers....
+
+
+
+Beta 7.6
+==========================
+--------------------------
+3 April. 2013
+----
+
+* Added support for GZDoom Builder's BuilderEffects plugin
+* Forked a bastard child version of Bootless Star that works with GZDoom Builder's latest SVN changes.  This program 'BootlessStarGZDB' will need the directory of 'GZDoomBuilder' instead of 'doombuilder'.
+
+
+
+Beta 7.5
+==========================
+--------------------------
+21 March. 2013
+----
+
+* Fixed a crash that would occur when attempting to save the user's presets.
+
+
+
+Beta 7.4
+==========================
+--------------------------
+24 February. 2013
+----
+
+* Applied an backport fix (from Beta 8 from Beta 8 still under-development) to the Hooking process.  This fix merely caches ~dp0 at first output and does not use ~dp0 directly for checks.  Without this fix, Bootless Star may never work properly when the user's Working Directory is in the file system as the program.
+* Fixed DirParent variable again....  Beta 8 will have this variable easily customizable so this issue shouldn't come back anymore after that release.
+* Nodes Viewer in the Doom Builder 2 project would never compile, but instead compile the Visplane project again.
+
+
+
+Beta 7.3
+==========================
+--------------------------
+18 February. 2013
+----
+
+* Uncommented out the NodesViewer in GZDoom Builder.  Thus, it is now plausible to compile the entire project and including the nodesviewer.
+
+
+
+Beta 7.2
+==========================
+--------------------------
+17 February. 2013
+----
+
+* QuickFinder will now detect if the program can properly find the Doombuilder working-copy directory.  This will come handy when the user is able to alter the DirParent mutable variable.
+* Added support for a new plug in Doom Builder 2 'NodesViewer'.  As for the ripple effect, support has also been added for the GZDoom Builder project but commented out for the time being.
+* Finally created an ASCII changelog file.
+* Added support for Bootless Star to open and output the changelog.
+
+
+
+Beta 7.1
+==========================
+--------------------------
+27 November. 2012
+----
+
+* Fixed a numerical consistency issue when selecting a program to compile.
+* Updated GZDoom Builder compiling method to meet with the changes on r1649
+
+
+
+Beta 7
+==========================
+--------------------------
+33 August. 2012
+----
+
+* Updated variable 'PATHMSVS' to now use the variable 'VS100COMNTOOLS'.  Thus, this no longer 'assumes' that the visual studio is one location.  This should help others greatly as this should automatically pin-point to the right file without any interaction from the user.
+           (Visual Studio 10 is only detectable)
+* Resolved a typo in the settings menu and main menu (eh...) :\
+* Removed support for Visplane Explorer; this is redundant to support as the plug-ins can not be compiled for this project.
+* Always update the title after a script-program has been successfully executed.
+* Added a separator in 'Logging' options, this should be consistent with every other options through out this program (if necessary).
+* Fixed a typo in available options that the user has within the main menu.
+
+
+--------
+RemovePackages
+* Suppress all settings to a temporary file within the FileSystem and print the errors afterwards before expunging the said temporary file.
+
+
+
+Beta 6
+==========================
+--------------------------
+31 July. 2012
+----
+
+* Fixed a very minor consistency with the strings during compiling the GZDoom Builder package.
+* It is now possible to compile the Visplane plugin in Doom Builder 2
+* [13 Aug. 2012] Added 'RemovePackages.bat': This program will now expunge any superfluous content that is left over from compiling the builds. But, however, this does not support the Visplane Explorer software.
+
+
+
+Beta 5
+==========================
+--------------------------
+24 July. 2012
+----
+
+* Fixed typo when specifying what plugins to compile.
+* It is now possible to compile every plugin available in GZDoom Builder!
+    I do NOT recommend using Visplane, unless you have very good ventilation and after market heatsink+fan or water cooling for the CPU. Don't be a McFly!
+* Added a new variables 'MSVSArgVPO' which is a dedicated for compiling the VPO dynamic link library.
+* Bootless Star now upgrades the VPO project for the user automatically with using VCUpgrade!
+* Added another variable 'GZDBPlugVisExpLibUpgrade' which is used for actual compiling with the vcxproj extension.
+* Always overwrite vpo_dll.vcxproj
+* When invoking MSBuild with VPO target, the OutDir 'should' output to the right directory. The program will force the OutDir; but, however, if there is ANY SPACES (from the parent dir. to VisplaneExplorer\Resources) this will break. Is it possible to fix this?
+* Slightly condensed the MSVSArg && MSVSArgVPO variables
+* Changed the verbosity level to 'Quiet'. This might help to remove some of the abundance of project warnings.
+* Do not clear the terminal when CompilePluginsDriver is reached.
+* The logfile should be a bit nicer now. Any processing tags are now marked and displayed within the logs as '>>>'. To alter the verbosity of the compiling warnings, the user must alter it manually. Refer here: http://msdn.microsoft.com/en-us/library/ms164311
+* Do not clear the terminal when CompileHelp is reached.
+* Added another variable 'DB2PlugVisExpLibUpgrade' which is used for actual compiling with the vcxproj extension.
+* Added another variable 'VEPlugVisExpLibUpgrade' which is used for actual compiling with the vcxproj extension.
+* Removed CRL references; I don't know what it is and I wont bother with it.
+* Hooking algorithm is now in a new method called 'StartUp'.
+* Updated some of the comments within FirstRun to be further accurate in the Variables meaning.
+* If there is duplicated directories after compiling and the user does not want the program to expunge the duplicated directory, the program will now point to 'CompileSuccess' instead of returning to 'Main'.
+
+
+
+Beta 4
+Bootless Star Project Name
+==========================
+--------------------------
+01 July. 2012
+----
+
+Beta 4 "Successful with faster updates than Microsoft!"
+----
+* Fixed two invoking commands that were not complete.  As this was in the Doom Builder 2 Visplane plugins, this was hardly noticed as it is not used.
+* Implemented external sub-script execution!  This now allows any external script to execute in Bootless Star's environment.  This can be useful for manipulating the doombuilder local working copy, cleaning up files in the 'Compiled Builds' directory, or even to create a setup package of the compiled builds.  This now opens a gateway for anyone to get more tasks done regardless of their needs.  However, for those that download scripts designed for Bootless Star must be careful.  As using other scripts, it is always possible for mishaps or intentional system\data changes, for example: DEL C:\*.  This program does NOT check the contents within the scripts, thus - be sure to review the code or be sure that the script file is trusted.
+* Added Tag Explorer to GZDoom Builder plugins list, however- this can not be compiled as the link is not consistent.
+* Added UMDF Controls to GZDoom Builder plugins list, however- this can not be compiled as the link is not consistent.
+* When Builder modes is compiled in Builder64, print a finished string.
+* Opps, I forgot to change DirParent variable back for normal use.  Otherwise, Doom builder directory is in the I:\ partition :P
+
+
+Alpha 4 "Because the hunt still continues"
+----
+{NOTE: You MUST be an administrator and give the program full root access to the system in order to use ROBOCOPY!}
+* When switching to 'Robocopy', the program did not properly alter the variable that holds the copy arguments.
+* STDOUT on duplication and expunging is no longer printed on the screen, but can be logged.
+* Fixed a parameter that caused ROBOCOPY to fail when duplicating.
+* Added 'CALL' to the Error Detection Registry.
+* Fixed an issue that would cause the wrong error message to be printed when an issue occurs with ROBOCOPY.
+* Slightly revised the Load Settings menu.  It should feel more neutral and not intimidating.
+* When the program is wanting user interaction with NavVar, use two greater than signs. (eg. >> STDIN_Here)
+   (Follows with the DeLorean appearance with NavVar)
+* Fixed a pointer issue in LogFile method.  If the user inputs an incorrect key or combination, the program would try to point to an non-existing method.
+* Spell-check revision
+* When first launching the program, it will give an execution startup message.  Most likely, not many will notice this.
+* Double spaced before introducing a new method.  This is just for ease when reading the code.
+* Implemented HotCompiler's (Nachtregen) Hooking!  This will change the clients WD to the program's absolute path.  This is necessary when using ROBOCOPY as the client and program MUST have full administrator access and privileges.
+* Changed the error detection when duplicating.  As the exit code '0' is different with XCOPY and ROBOCOPY, they must be treated individually as opposed to shared.
+* Fixed a misnomer "Error Code" -> "Exit Code" when an error occurs.  Not every exit code relates to an 'error'.
+
+
+Alpha 3 "The hunt for a compile method for the Visplane package"
+----
+* Changed a ReadMe and QuickFinder "Press any key to continue" message -> "Press any key to return to the Main Menu".
+* Fixed detection error for HTML workshop.
+* Changed how the program deals with filesystem directories.  More specifically, don't add quotes to the directory path within the variable but when using the variable.
+  As a result of this change, any presets saved before this update must be either manually altered or save a new preset.
+* Newly created saved presets now print the version they were saved in.  This will help if the preset needs to replenished due to incompatible reasons.
+   {Following with the DeLorean Backup program}
+* Fixed a detection fault when setting up a custom directory to HTML Workshop.
+* Added a note when customizing the directory to either HTML Workshop or Microsoft Visual Studio to not add quotes.
+* Fixed detection error for Microsoft Visual Studio.
+* Fixed detection (IF EXIST) pointers in QuickFinder.
+* Fixed a string that was completely incorrect to the category in Sound Properties.
+* Implemented logging!
+* Fixed a plausible crash in GZDoom Doombuilder when compiling Builder Modes.
+* When an error occurs, clear the screen again.  This was temporarily not done for development purposes, but with logging, however, this can be reinstated.
+* Compile the help documents when compiling the Doombuiler 64 project
+* Never call 'hhc.exe'; the program doesn't like it (?)
+* Fixed a typo that caused the compiling method to crash in GZDDoombuilder Plugins.
+* Compile the help documents when compiling the GZDoombuiler project
+* Compile the help documents when compiling the Visplane Explorer project
+* Resolved Mirror overwriting issue, which - never worked.  If the project was already compiled and yet a new build was compiled, the user should be warned that the contents are going to be deleted and\or overwritten.
+* Fixed ResumePointer in CompileMirrorGZDB method.  This pointed to the Doom Builder 64 instead of GZDoom Builder.
+* When an existing directory is present and preparing to interact with the user, never cache quotes in variable named: DestroyBuild
+
+
+Alpha 2
+----
+* version fixes innumerable bugs found in the Beta 4 Alpha 1
+
+
+Alpha 1
+----
+* This version is mainly a rewrite from scratch but excluding CHOICE for user interaction but using variables to check the user's input.
+* Users can now save and load their preset settings.
+* Users can now be able to customize variables that point to the right directories such as Microsoft Visual Studio, and even Microsoft HTML workshop.
+
+
+
+Beta 3
+==========================
+--------------------------
+29 December. 2011
+----
+
+This build greatly improves processing, and includes one or two critical fixes to reduce crashing the program.
+Thanks to Affliction (aka C405129) for critiquing and sharing advice on this program!
+
+* Reduced the processing time during closing. (Windows automatically thrashes the Variables once the program is unloaded)
+* Changed the error message when CHOICE.exe reaches a fatal error to a nicer message.
+* Added SlimDX as a perquisite.
+* Expunged commented menu selections (3 && 4); I will not support SVN CMD line. Someone else can do this and further tweak this program to natively support it and including error handling.
+* Re-worded some selections in the menu.
+* Expunged detection code for SlimDX. This requires additional software and further manipulation to support it.
+* Further expunged references checks to SlimDX.
+* Removed references checks to MSBuild. It is not easily possibly to check MSBuild without having to scan all directories in a bloaty way. If MSBuild can not be found, there is already an error message for it.
+* Fixed an issue that would prompt the user that the already existing compiled software in ReadyBuildDir would be removed, but it would not fully work correctly.
+* Fixed a possible crash when CHOICE.exe reaches an error during switching to an non-existing method.
+* Re-worded legalcrap => legal stuff
+* Added a message indicating that the build is now ready and where it is located.
+
+
+
+Beta 2
+==========================
+--------------------------
+23 December. 2011
+----
+
+* Implemented: Easy Customizable Variables!  If the user does not have the same paths that this program specifies, the user can easily tweak a value within the custom variable!  headache-free approach?  The user however, must edit the variables within the block inside the batch file.
+* Fixed: During Win5Compat==TRUE and if the ReadyBuild dir already exists, the user is prompted that it will be expunged, but it never happens.
+* Fixed: Enforced the compiler to check the Plugin variable before compiling the software.
+* Resolved: The compiler now checks if the parent folders exists before compiling any data within the folders.
+Fixed Enforced a PAUSE state as the last step when the program closes; this should help to reduce premature terminations; otherwise, users can not view what is being displayed on the screen!
+* Fixed Updated the Welcome/LegalCrap screen.  This program is now 'stable' with Windows XP (atleast that I can judge with Win5Compat==TRUE)
+* Added: So much time giving in such a program, this deserves a CodeName!  {Codename Bootless Star}
+* Changed: Users are no longer prompted to enter a key when the compiler cannot find the HTML Workshop. 
+
+
+
+Beta 1
+==========================
+--------------------------
+22 December. 2011
+----
+
+* Fixed an issue when XPCompat == True, users would be prompted that a folder would be expunged even though that the folder did not exist.
+* Slight code clean up
+
+
+
+First Released Beta Build
+Make Private Build Project Name
+==========================
+--------------------------
+20 December. 2011
+----
+
+* Implemented an internal debugger to check the variables utilized within the program, QuickFinder.
+* Interaction can work with Win5 foundation through Win6.1.  Keep in mind that navigation is limited as Win5 foundation does not contain the ExtCMD CHOICE.exe.
+* Program can now compile all of the plugins for Doom Builder 2.

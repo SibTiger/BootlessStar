@@ -1,0 +1,885 @@
+=========================================
+Core Environment Static Variables
+-----------------------------------------
+Variables that are not interchangeable and always should have the same value.
+=========================================
+
+
+Separator
+---------------
+    Description: Draws a dashed border on the screen.
+    Variable Type: String
+    Default Value: -------------------------
+---------------
+
+
+
+SeparatorLong
+---------------
+    Description: %Separator%*2; Draws an extra long dashed border on the screen.
+    Variable Type: String
+    Default Value: --------------------------------------------------
+---------------
+
+
+
+SeparatorSmall
+---------------
+    Description: %Separator%/2; Draws a short dashed border on the screen.
+    Variable Type: String
+    Default Value: -------------
+---------------
+
+
+
+SND_BELL
+---------------
+    Description: A special ASCII\Binary code to sound a bell.  This causes Windows to sound an alarm to the user by using the 'default' sound from the Windows Sound Properties.
+    Variable Type: String
+    Default Value: 0x07
+---------------
+
+
+
+
+=========================================
+Core Environment Mutable Variables
+-----------------------------------------
+Variables that are interchangeable.
+=========================================
+
+
+ProcessVarA && ProcessVarB && ProcessVarC && ProcessVarD
+---------------
+    Description: Dedicated variables for storing and processing data as needed.
+    Variable Type: Mixed
+    Default Value: NULL
+        Never expect 'null' to always be the default value!
+---------------
+
+
+
+STDIN
+---------------
+    Description: A variable that is used for specifically for capturing the user's input.
+    Variable Type: Mixed
+    Default Value: NULL
+---------------
+
+
+
+ExitCode
+---------------
+    Description: This variable is used for defining how the program is going to terminate.
+        0 = Clean Exit
+        1 = Hooking Failed
+        2 = Incorrect Parameters or Syntax Error
+        3 = Generalized Error [premature termination]
+        4 = Incompatible Operating System
+    Variable Type: Integer
+    Default Value: 3
+---------------
+
+
+
+scriptExitCode
+---------------
+    Description: This variable is used for defining how the modules or other scripts terminated.  As every script performs innumerable tasks, it is not possible to determine proper errors if the ExitCode is greater than or less than 0.  The main core program will only determine if an error occurred if the ExitCode is _NOT_ zero.
+    Variable Type: Integer
+    Default Value: 0
+---------------
+
+
+
+UserConfigurationKeyChainToken
+---------------
+    Description: This variable holds the users unique token number that can be used with modules to quickly save and load the preset configuration with no user interaction.
+    Variable Type: Int
+    Default Value: 0
+---------------
+
+
+
+core.Date
+---------------
+    Description: This contains a cached but filtered %Date% value.  This will allow modules to easily use the value for filenames and the like.
+    Variable Type: String
+    Default Value:
+---------------
+
+
+
+core.Time
+---------------
+    Description: This contains a cached but filtered %Time% value.  This will allow modules to easily use the value for filenames and the like.
+    Variable Type: String
+    Default Value:
+---------------
+
+
+
+
+=========================================
+Core Detection Variables
+-----------------------------------------
+Variables that stores the detection status value.
+=========================================
+
+
+Detect_SVN
+---------------
+    Description: This variable contains a status value of wither or not the Subversion command line tools exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_7Zip
+---------------
+    Description: This variable contains a status value of wither or not the 7Zip software exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_InnoSetup
+---------------
+    Description: This variable contains a status value of wither or not the Inno Setup Builder exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_MinGW
+---------------
+    Description: This variable contains a status value of wither or not the MinGW compiler exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_MSHTMLWorkShop
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft HTML Workshop exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_MSVS120COMMTOOLS
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft Visual Studio 2013 exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_MSVS110COMMTOOLS
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft Visual Studio 2012 exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_MSVS90COMMTOOLS
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft Visual Studio 2010 exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_MSVS80COMMTOOLS
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft Visual Studio 2008 exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_MicrosoftVisualStudio
+---------------
+    Description: This variable contains a status value of wither or not the any version of Microsoft's Visual Studio exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_dotNET1
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft .NET Framework version 1 exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_dotNET1.1
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft .NET Framework version 1.1 exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_dotNET2
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft .NET Framework version 2 exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_dotNET2-64
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft .NET Framework version 2 [64bit] exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_dotNET3
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft .NET Framework version 3 exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_dotNET3-64
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft .NET Framework version 3 [64bit] exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_dotNET3.5
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft .NET Framework version 3.5 exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_dotNET3.5-64
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft .NET Framework version 3.5 [64bit] exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_dotNET4
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft .NET Framework version 4 exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_dotNET4-64
+---------------
+    Description: This variable contains a status value of wither or not the Microsoft .NET Framework version 4 [64bit] exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_Robocopy
+---------------
+    Description: This variable contains a status value of wither or not the Robocopy software exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_Python2
+---------------
+    Description: This variable contains a status value of wither or not the Python v2.7.x software exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_Python3
+---------------
+    Description: This variable contains a status value of wither or not the Python v3.3.x software exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
+Detect_RootAccess
+---------------
+    Description: This variable determines if the program has Root\Administrative privileges.
+    Variable Type: Bool
+---------------
+
+
+
+=========================================
+User Configurable Mutable Variables
+-----------------------------------------
+Variables that are specifically for the users configuration purposes, such as settings for how to invoke 7Zip, directory locations, and various other options.
+=========================================
+
+
+
+DashboardViewerTool
+---------------
+    Description: 
+    Variable Type: Bool
+    Default Value: True
+---------------
+
+
+
+CallExplorerCommands
+---------------
+    Description: This variable allows the program to do simple tasks with use of Windows Explorer.exe.  These simple tasks is merely the authority to execute a new window instance that highlight(s) certain object(s).
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+CopyMethod
+---------------
+    Description: This variable assigns what program to use when duplicating objects to a new location.
+        Duplicating Programs [extCMDs]:
+            XCOPY
+            ROBOCOPY
+    Variable Type: String
+    Default Value: XCOPY
+---------------
+
+
+
+XCopyArg
+---------------
+    Description: A specific variable that holds XCOPY's switches and parameters.
+    Variable Type: String
+    Default Value: /V /C /Y /Z
+---------------
+
+
+
+RoboCopyMultileThreads
+---------------
+    Description: Specifies how many threads to utilize when duplicating data with Robocopy.
+    Variable Type: Integer
+    Default Value: 2
+---------------
+
+
+
+RoboCopyArg
+---------------
+    Description: A specific variable that holds ROBOCOPY's switches and parameters.
+    Variable Type: String
+    Default Value: /ZB /XD /FP /V /BYTES /ETA /R:3 /W:30 /MT:2
+---------------
+
+
+
+CopyIntCMDArg
+---------------
+    Description: A specific variable that holds COPY's switches and parameters.
+    Variable Type: String
+    Default Value: /V /Y /Z
+---------------
+
+
+
+CopyArg
+---------------
+    Description: This variable primarily holds the current select %CopyMethod% parameters and switches.  For example, if %CopyProgram% == ROBOCOPY, then %CopyArg% will == %RoboCopyArg%.
+    Variable Type: String
+    Default Value: %XCopyArg%
+---------------
+
+
+
+MSVSArg
+---------------
+    Description: This variable only holds switches and parameters for compiling the Doom Builder 2 project, this variable are not yet configurable.
+    Variable Type: String
+    Default Value: /t:Rebuild /p:Configuration=Release;Platform=x86 /v:quiet
+---------------
+
+
+
+MSVSArgVPO
+---------------
+    Description: This variable only holds switches and parameters for compiling the Doom Builder 2 project, this variable are not yet configurable.
+    Variable Type: String
+    Default Value: /p:Configuration=Release;Platform=Win32 /v:quiet
+---------------
+
+
+
+ToggleLog
+---------------
+    Description: This variable defines whether or not the wants to enable logging.  If this variable is set to 'True', the STDOUT and STDERR will be redirected to an ASCII file. However, if this variable is set to 'False', all of the STDOUT and STDERR will be completely discarded [redirected to null].
+    Variable Type: Boolean
+    Default Value: False
+---------------
+
+
+
+STDOUT
+---------------
+    Description: Dependable to %ToggleLog%; this variable will house a specific to either redirect the data to a ASCII file or to NULL [discarded].
+    Variable Type: String
+    Default Value: NUL
+---------------
+
+
+
+UseBell
+---------------
+    Description: This variable defines how the user wishes to be notified when an event occurs.  If the %UsePCSpeaker% is greater than zero, the program will alarm the user be using a 'bell' sound.
+        0 = Disabled
+        1 = Alarm when these occur:
+            Failure Events and Operations
+            Successful Operations and Events
+        2 = Alarm when these occur:
+            Failure Events and Operations
+    Variable Type: Integer
+    Default Value: 1
+---------------
+
+
+
+PathMSHTMLWorkShop
+---------------
+    Description: This variable defines the directory location in which 'Microsoft HTML Help Workshop [hhc]' can be found.
+    Variable Type: String
+    Default Value: %ProgramFiles(x86)%\HTML Help Workshop\hhc
+---------------
+
+
+
+PriorityGeneral
+---------------
+    Description: This variable defines the default programs priority.  The Windows NT Kernel [5.0 and higher] allows the program to run on several modes, but do note that the higher the program has - the more time is spent for that program and less on other current processes.  The list below outlines what priority levels are available:
+        Low Priority
+        Below Normal Priority
+        Normal Priority
+        Above Normal Priority
+        High Priority
+        Real Time [LUDICROUS SPEED!]
+    
+    Variable Type: String
+    Default Value: Normal
+---------------
+
+
+
+PathMSVS2005
+---------------
+    Description: This variable defines the directory location in which 'Microsoft Visual Studio [Common Tools]' can be found.
+    Variable Type: String
+    Default Value: %VS80COMNTOOLS%
+---------------
+
+
+
+PathMSVS2008
+---------------
+    Description: This variable defines the directory location in which 'Microsoft Visual Studio [Common Tools]' can be found.
+    Variable Type: String
+    Default Value: %VS90COMNTOOLS%
+---------------
+
+
+
+PathMSVS2010
+---------------
+    Description: This variable defines the directory location in which 'Microsoft Visual Studio [Common Tools]' can be found.
+    Variable Type: String
+    Default Value: %VS100COMNTOOLS%
+---------------
+
+
+
+PathMSVS2012
+---------------
+    Description: This variable defines the directory location in which 'Microsoft Visual Studio [Common Tools]' can be found.
+    Variable Type: String
+    Default Value: %VS110COMNTOOLS%
+---------------
+
+
+
+PathMSVS2013
+---------------
+    Description: This variable defines the directory location in which 'Microsoft Visual Studio [Common Tools]' can be found.
+    Variable Type: String
+    Default Value: %VS120COMNTOOLS%
+---------------
+
+
+
+PathMinGW
+---------------
+    Description: This variable defines the directory location in which 'MinGW' can be found.
+    Variable Type: String
+    Default Value: .\MinGW\
+---------------
+
+
+
+PathInnoSetup
+---------------
+    Description: This variable defines the directory location in which 'Inno Setup [iscc.exe]' can be found.
+    Variable Type: String
+    Default Value: -
+---------------
+
+
+
+PathPython2
+---------------
+    Description: This variable defines the directory location in which 'Python v2.7.x' can be found.
+    Variable Type: String
+    Default Value: -
+---------------
+
+
+
+PathPython3
+---------------
+    Description: This variable defines the directory location in which 'Python v3.3.x' can be found.
+    Variable Type: String
+    Default Value: -
+---------------
+
+
+
+Path7Zip
+---------------
+    Description: This variable defines the directory location in which '7Zip [7z.exe]' can be found.
+    Variable Type: String
+    Default Value: -
+---------------
+
+
+
+SevZipKey
+---------------
+    Description: This variable contains the users defined key for encrypting archive files.  This key is NOT encrypted in file [this program], as a result - the key is _RAW_.  For example, if the key is set to 'AlDaddyBundy', the key will visibly raw on file.
+    Variable Type: String
+    Default Value: 
+---------------
+
+
+
+SevZipUseKey
+---------------
+    Description: Dependable with %SevZipKey%; this variable defines whether the user wants to encrypt newly created archive files.  This variable may not always be adhered too, depending on what the module supports.
+    Variable Type: Boolean
+    Default Value: False
+---------------
+
+
+
+SevZipArchiveFormat
+---------------
+    Description: This variable defines what Archive Format to utilize when generating a new archive file.  Available archive formats: Zip, GZip, BZip2, 7z, and XZ.
+    Variable Type: String
+    Default Value: 7z
+---------------
+
+
+
+SevZipFileExtension
+---------------
+    Description: Dependable with %SevZipArchiveFormat%; this variable defines a specific extension to be included within the filename of the archive file.
+    Variable Type: String
+    Default Value: 7z
+---------------
+
+
+
+SevZipCompressionPass
+---------------
+    Description: This variable defines how many passes (or depth) 7Zip must go through when compressing the contents within the archive file.  More passes (or depth) allows the files to be well compressed, but requires more processing to compress and decompress.  Below is a list of what passes (or depths) is available:
+        Copy = 0
+        Low = 1
+        Below Normal = 3
+        Normal = 5
+        Above Normal = 7
+        High = 9
+    Variable Type: Integer
+    Default Value: 5
+---------------
+
+
+
+SevZipCopyFormat
+---------------
+    Description: This variable defines what copy algorithm to utilize when transition files from the source to the archive file.  Each supporting setting can determine how well the data can be compressed and managed within the archive file.  Available copy formats: Copy, Deflate, Deflate64, BZip2, LZMA, and PPMd.
+    Variable Type: String
+    Default Value: Deflate
+---------------
+
+
+
+SevZipMultiThreadingCPU
+---------------
+    Description: This variable allows the 7Zip to either take advantage of multiple cores and threads on the Central Processing Unit, or to use minimal core usage (for systems that may not have more than one core\thread).
+    Variable Type: Boolean
+    Default Value: on
+---------------
+
+
+
+SevZipEncryptionAlgorithm
+---------------
+    Description: This variable defines what encryption algorithm to utilize when generating a new archive file.  Available encryptions: ZipCrypto, AES128, AES192, and AES256.
+    Variable Type: String
+    Default Value: ZipCrypto
+---------------
+
+
+
+SevZipVerify
+---------------
+    Description: This variable can grant the program (or module) to perform integrity checking on the archive file.  This can be helpful to determine if the archive file is corrupted or contains errors.  Take note that performing this operation may take awhile, depending on the size of the archive file.
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ModuleExecuteSharingWindow
+---------------
+    Description: This variable determines wither or not the module should be executed in the same window as the core.  When false, the module will be created in a new window allowing the user to execute more than one module at one time as well as avoiding conflicts from buggy modules.
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersXCopy.Verify
+---------------
+    Description: When true, XCopy will verify that the data is being duplicated correctly.
+        XCopy Parameter Switch: Verify [/V]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersXCopy.Continue
+---------------
+    Description: When true, XCopy will continue the original given operation even if errors have already occurred.  Though, serious errors will still prevent XCOPY from operating normally, for example deep directories - XCOPY will not be able work.
+        XCopy Parameter Switch: Continue operation regardless of errors [/C]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersXCopy.Encrypt
+---------------
+    Description: When true, XCOPY will not try to decrypt the data being duplicated to the destination target, instead XCOPY will allow the encryption on to the destination target - - - even if the destination does _NOT_ support it.
+        XCopy Parameter Switch: Keep encrypted data at destination [/G]
+    Variable Type: Boolean
+    Default Value: False
+---------------
+
+
+
+ParametersXCopy.Suppress
+---------------
+    Description: When true, XCOPY will not prompt the user for confirmation of over writing individual files.
+        XCopy Parameter Switch: Suppress Overwrite Messages [/Y]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersXCopy.Restart
+---------------
+    Description: When true, XCOPY will try to restart the original file that was being duplicated before getting disconnected.
+        XCopy Parameter Switch: Network Restartable Mode [/Z]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersCopy.Decrypt
+---------------
+    Description: When true, the intCMD COPY will decrypt the data at the destination target.
+        IntCMD Copy Parameter Switch: Decrypt destination target files [/D]
+    Variable Type: Boolean
+    Default Value: False
+---------------
+
+
+
+ParametersCopy.Verify
+---------------
+    Description: When true, the intCMD COPY will verify that the duplicated data matches with the source target.
+        IntCMD Copy Parameter Switch: Verify data[/V]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersCopy.Suppress
+---------------
+    Description: When true, the intCMD COPY will not prompt the user for each individual overwrite confirmation.
+        IntCMD Copy Parameter Switch: Suppress warnings [/Y]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersCopy.Restart
+---------------
+    Description: When true, the intCMD COPY will attempt to restart a failed or disconnected file transfer from a remote target.
+        IntCMD Copy Parameter Switch: Network Restartable Mode [/Z]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersRobocopy.RestartBackup
+---------------
+    Description: When true, ROBOCOPY will attempt to restart a failed or disconnected file transfer from a remote target.  However, if incase ROBOCOPY is unable too due to permission conflicts, it will instead use Backup mode.
+        ExtCMD Robocopy Parameter Switch: Network Restartable Mode (Backup mode if Permission failure for Network Restart) [/ZB]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersRobocopy.RestrictDeepPaths
+---------------
+    Description: When true, ROBOCOP will restrict deep directory paths that typical programs and API are unable access.  
+        ExtCMD Robocopy Parameter Switch: Restrict to 256char limit [/256]
+    Variable Type: Boolean
+    Default Value: False
+---------------
+
+
+
+ParametersRobocopy.NoJunctionPoints
+---------------
+    Description: When true, ROBOCOPY will not try to access or append Junction pointers.  It is STRONGLY recommend to leave this enabled!  It is possible for Robocopy to literally: Delete the root of a drive and\or endless recursion loop.
+        ExtCMD Robocopy Parameter Switch: No Junction Paths [/XD]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersRobocopy.FullPath
+---------------
+    Description: When true, ROBOCOPY will display the full path of the directories and data.
+        ExtCMD Robocopy Parameter Switch: List Full Paths [/FP]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersRobocopy.Verbose
+---------------
+    Description: When true, ROBOCOPY will display verbose information.
+        ExtCMD Robocopy Parameter Switch: Verbose [/V]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersRobocopy.BytesFileSize
+---------------
+    Description: When true, ROBOCOPY will display data files in terms of byte size.
+        ExtCMD Robocopy Parameter Switch: Display File Size in Bytes [/BYTES]
+    Variable Type: Boolean
+    Default Value: False
+---------------
+
+
+
+ParametersRobocopy.NoProgress
+---------------
+    Description: When true, ROBOCOPY will not display its progress.
+        ExtCMD Robocopy Parameter Switch: Do Not Display Progress [/NP]
+    Variable Type: Boolean
+    Default Value: False
+---------------
+
+
+
+ParametersRobocopy.ETA
+---------------
+    Description: When true, ROBOCOPY will display Estimated Time of Arrival.
+        ExtCMD Robocopy Parameter Switch: Estimated Time of Arrival [/ETA]
+    Variable Type: Boolean
+    Default Value: True
+---------------
+
+
+
+ParametersRobocopy.Retry
+---------------
+    Description: Number of Retries on failed copies.
+        ExtCMD Robocopy Parameter Switch: Retries [/R:x]
+    Variable Type: Integer
+    Default Value: 20
+---------------
+
+
+
+ParametersRobocopy.Wait
+---------------
+    Description: Wait time between retries (seconds).
+        ExtCMD Robocopy Parameter Switch: Wait before retry [/W:x]
+    Variable Type: Integer
+    Default Value: 30
+---------------
+
+
+
+ParametersRobocopy.Multithread
+---------------
+    Description: Do multi-threaded copies with x threads.
+        ExtCMD Robocopy Parameter Switch: Multithreading [/MT:x]
+    Variable Type: Integer
+    Default Value: 2
+---------------

@@ -1,0 +1,27 @@
+Prerequisites
+======================
+
+
+Foundation Requirements:
+--------
+    Bootless Star 1.5 or later
+
+
+
+Necessary:
+--------
+    Visual Studio 2010
+        http://www.microsoft.com/visualstudio/eng/products/visual-studio-2010-express
+    HTML Workshop
+        http://www.microsoft.com/en-us/download/details.aspx?id=21138
+    Subversion [SVN]
+        http://tortoisesvn.net/
+
+
+
+Optional:
+--------
+    7Zip
+        http://www.7-zip.org/
+    Inno Setup
+        http://www.jrsoftware.org/isinfo.php

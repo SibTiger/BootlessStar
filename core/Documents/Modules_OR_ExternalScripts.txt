@@ -1,0 +1,10 @@
+Project Modules OR External Scripts?
+
+Project Modules:
+    Project Modules are designed to run in Bootless Star's environment.
+        This can not be executed _WITHOUT_ Bootless Star, thus - it is not possible to run the program immediately by double-clicking the shell script.
+
+
+External Scripts
+    Program scripts that can be executed without needing Bootless Star's controlled environment.
+        This can be executed _WITHOUT_ Bootless Star, thus - it is possible to run the program immediately by simply double clicking the shell script.
