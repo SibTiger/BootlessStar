@@ -35,6 +35,7 @@ REM ----
 REM Completed, successfully finished
 CALL :Operation_TerminateSuccessfully
 REM Finished
+PAUSE
 GOTO :EOF
 
 

@@ -46,4 +46,5 @@ CALL :Operation_TerminateSuccessfully
 REM Check Power Settings; wither or not the system needs to be hibernated, enter sleep mode, etc.
 CALL :PowerState
 REM Finished
+PAUSE
 GOTO :EOF

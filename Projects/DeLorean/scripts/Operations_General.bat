@@ -189,7 +189,6 @@ IF %ToggleLog% EQU True (
     ECHO Log Name:
     ECHO   %STDOUT%
 )
-PAUSE
 GOTO :EOF
 
 
@@ -203,5 +202,4 @@ ECHO ^<-^>       Operation Successful       ^<-^>
 ECHO %SeparatorLong%
 ECHO.
 ECHO Operation was successful!
-PAUSE
 GOTO :EOF
