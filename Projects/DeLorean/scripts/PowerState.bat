@@ -68,9 +68,8 @@ REM # Documentation: When called, this will manage the PowerState when set to 'H
 REM # =============================================================================================
 :PowerState_SignalHibernation
 CALL :PowerState_DisplayMessage "Power State: Hibernation" 1
-CALL :PowerState_AbortSignal
 REM ----
-SHUTDOWN /f /t %UserConfig.PowerStateGraceTime% /h
+SHUTDOWN /f /h
 REM ----
 GOTO :EOF
 
