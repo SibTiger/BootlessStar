@@ -190,9 +190,9 @@ IF %1 EQU 0 (SET UserConfig.PowerState=0)
 IF %1 EQU 1 (ECHO REM Power State)>> "%~2"
 IF %1 EQU 1 (ECHO SET UserConfig.PowerState=%UserConfig.PowerState%)>> "%~2"
 REM ----
-REM Grace Time Warning [in minutes]
-IF %1 EQU 0 (SET UserConfig.PowerStateGraceTime=5)
-IF %1 EQU 1 (ECHO REM Grace Time Warning [in minutes])>> "%~2"
+REM Grace Time Warning [in seconds]
+IF %1 EQU 0 (SET UserConfig.PowerStateGraceTime=300)
+IF %1 EQU 1 (ECHO REM Grace Time Warning [in seconds])>> "%~2"
 IF %1 EQU 1 (ECHO SET UserConfig.PowerStateGraceTime=%UserConfig.PowerStateGraceTime%)>> "%~2"
 REM ----
 GOTO :EOF
