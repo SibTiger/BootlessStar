@@ -30,7 +30,7 @@ Ability to encrypt their backup archive files (this dependable on the Bootless S
 Ability to store backup's in another drive that is dedicated to for system and user backups
 Ability to allow or disallow backing up users movies that is stored in [~\Videos, ~\MyVideos, ~\My Videos, ~\Movies, ~\MyMovies, ~\My Movies]
 Easily unpack (restore) data; HOWEVER THIS WILL _NOT_ ACTUALLY RESTORE OR OVERWRITE NOR COPY\MOVE DATA TO YOUR HOME DIRECTORY!  Instead, all unpacked data will be moved to \restore\.
-
+After the backup is successful, the program can issue a signal to suspend, hibernate, and shutdown the system.
 
 
 
