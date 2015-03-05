@@ -57,8 +57,8 @@ REM # ==========================================================================
 :Initialization_IdentifiersStatic
 REM Static Variables
 SET ProjectName=DeLorean
-SET ProjectVersion=5.1.2
-SET ReleaseDate=26.October.2014
+SET ProjectVersion=5.2
+SET ReleaseDate=5.March.2015
 REM This sets up the archive based name, this is used for the backup process.
 SET "Backup_FileName=Backup-[%ComputerName%]_%core.Date%"
 REM The general output file name for the restore and backup process
@@ -173,6 +173,28 @@ REM Exclude the user's videos directories from backup?
 IF %1 EQU 0 SET UserConfig.ExcludeVideos=False
 IF %1 EQU 1 (ECHO REM Allow the program to exclude backing up the users video directories [~\Videos, ~\My Videos, ~\My Movies, ~\Movies])>> "%~2"
 IF %1 EQU 1 (ECHO SET UserConfig.ExcludeVideos=%UserConfig.ExcludeVideos%)>> "%~2"
+
+
+IF %1 EQU 1 (ECHO.)>> "%~2"
+REM Power State Settings
+REM -------------------------------------
+IF %1 EQU 1 (ECHO REM Power State Settings)>> "%~2"
+IF %1 EQU 1 (ECHO REM --------------------)>> "%~2"
+REM ----
+REM Power State variable:
+REM     0 = Keep Running [S0]
+REM     1 = Sleep Mode [S3]
+REM     2 = Hibernation [S4]
+REM     3 = Shutdown
+IF %1 EQU 0 (SET UserConfig.PowerState=0)
+IF %1 EQU 1 (ECHO REM Power State)>> "%~2"
+IF %1 EQU 1 (ECHO SET UserConfig.PowerState=%UserConfig.PowerState%)>> "%~2"
+REM ----
+REM Grace Time Warning [in minutes]
+IF %1 EQU 0 (SET UserConfig.PowerStateGraceTime=5)
+IF %1 EQU 1 (ECHO REM Grace Time Warning [in minutes])>> "%~2"
+IF %1 EQU 1 (ECHO SET UserConfig.PowerStateGraceTime=%UserConfig.PowerStateGraceTime%)>> "%~2"
+REM ----
 GOTO :EOF
 
 

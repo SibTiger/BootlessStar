@@ -32,6 +32,14 @@ ECHO     When set to 'True', this will forbid the program from backing up the us
 ECHO         Directories that will be excluded: ~\Videos, ~\My Videos, ~\Movies, ~\My Movies
 ECHO     - Current Value: [%UserConfig.ExcludeVideos%]
 ECHO.
+ECHO [5] Toggle System's Power State
+ECHO     After the user's settings has been backed up successfully, the program can issue a signal to the Operating System to enter a Sleep state, a full Hibernation state, or shutdown the system.
+ECHO     NOTE: By default, this is disabled.
+REM The variable must be translated into a form that the user can understand
+CALL :Settings_NiceValues_PowerState
+REM ----
+ECHO     - Current Value: [%ProcessVarA%]
+ECHO.
 ECHO Other Options
 ECHO %SeparatorSmall%
 ECHO [U] Update Saved Profile named: %UserConfigurationLoaded%
@@ -49,6 +57,7 @@ IF "%STDIN%" EQU "1" GOTO :Settings_Toggle_EncryptKey
 IF "%STDIN%" EQU "2" GOTO :Settings_Toggle_BackToTheFutureQuotes
 IF "%STDIN%" EQU "3" GOTO :Settings_Update_LocalDirectory
 IF "%STDIN%" EQU "4" GOTO :Settings_Toggle_ExcludeVideosBackup
+IF "%STDIN%" EQU "5" GOTO :Settings_Update_PowerState
 IF /I "%STDIN%" EQU "U" GOTO :Settings_UpdateProfile
 IF /I "%STDIN%" EQU "X" GOTO :EOF
 IF /I "%STDIN%" EQU "Exit" GOTO :EOF
@@ -218,3 +227,128 @@ REM # ==========================================================================
 ECHO !ERR!: The specified path "%ProcessVarA%" does not exists!
 PAUSE
 GOTO :EOF
+
+
+
+REM # =============================================================================================
+REM # Documentation: Inspect the value of the Power State variable (which is an Integer value) and
+REM #           translate it to string that the user can easily understand.
+REM # =============================================================================================
+:Settings_NiceValues_PowerState
+IF "%UserConfig.PowerState%" EQU "0" (
+    SET "ProcessVarA=Disabled"
+    GOTO :EOF
+)
+IF "%UserConfig.PowerState%" EQU "1" (
+    SET "ProcessVarA=Suspend Mode"
+    GOTO :EOF
+)
+IF "%UserConfig.PowerState%" EQU "2" (
+    SET "ProcessVarA=Hibernation Mode"
+    GOTO :EOF
+)
+IF "%UserConfig.PowerState%" EQU "3" (
+    SET "ProcessVarA=Shutdown"
+    GOTO :EOF
+) ELSE (
+    SET "ProcessVarA=!CRIT_ERR!: Couldn't translate variable 'PowerState' of value [%UserConfig.PowerState%]!
+)
+EXIT /B 1
+
+
+
+REM # =============================================================================================
+REM # Documentation: This function will allow the user to change the power settings within this program.
+REM #       Obviously this has ABSOLUTELY NO RELATION to the local system's power settings that the OS itself manages.
+REM #       Instead, this program will issue a signal to either sleep, shutdown, or hibernate.
+REM # =============================================================================================
+:Settings_Update_PowerState
+CLS
+CALL :DashboardOrClassicalDisplay
+CALL :QuoteDatabase
+ECHO Control Panel: Update Power Settings
+ECHO %Separator%
+ECHO.
+ECHO.
+ECHO Power Settings:
+ECHO -----------------
+ECHO Once the backup has been completed, this program can send a signal to the Operating System to enter into a energy saving power state.  There will be a %UserConfig.PowerStateGraceTime% minute grace period - in which the user can abort the process, but only for commands that support this grace time.
+ECHO CRITICAL NOTE: the 'force' flag WILL be used in the signal!
+ECHO.
+ECHO Currently Set:
+CALL :Settings_NiceValues_PowerState
+ECHO   %ProcessVarA%
+ECHO.
+ECHO [1] Keep System Powered On
+ECHO       The computer will remain as-is; the Operating System power setting's will still manage the idle state.0
+ECHO.
+ECHO [2] Suspend State
+ECHO       Place the system into sleep mode as soon as the %ProjectName% finishes it's backup process.
+ECHO       No grace time will be issued
+ECHO.
+ECHO [3] Hibernation State
+ECHO       Place the entire system into hibernation mode as soon as the %ProjectName% finishes it's backup process.
+ECHO.
+ECHO [4] Shutdown System
+ECHO       Completely shutdown the entire system as soon as the %ProjectName% finishes it's backup process.
+ECHO      NOTE for WINDOWS 8 and LATER PC USERS
+ECHO            With the 'force' flag being used, the Kernel state will be thrashed.  Meaning, that the OS will have a slower start-up time.  During normal operations, the kernel is cached for a faster start-up.
+ECHO.
+ECHO.
+ECHO Other Options
+ECHO %SeparatorSmall%
+ECHO [X] Cancel
+CALL :UserInput
+GOTO :Settings_Update_PowerState_UserInput
+
+
+
+REM # =============================================================================================
+REM # Documentation: Update the Power Setting's based on the user's feedback.
+REM # =============================================================================================
+:Settings_Update_PowerState_UserInput
+REM Cancel \ Go back to the previous menu
+IF /I "%STDIN%" EQU "X" (
+    CALL :ClearBuffer
+    GOTO :Settings
+)
+IF /I "%STDIN%" EQU "Cancel" (
+    CALL :ClearBuffer
+    GOTO :Settings
+)
+IF /I "%STDIN%" EQU "Exit" (
+    CALL :ClearBuffer
+    GOTO :Settings
+)
+REM ----
+
+REM Keep Running; disabled energy saving states
+IF "%STDIN%" EQU "1" (
+    SET UserConfig.PowerState=0
+    CALL :ClearBuffer
+    GOTO :Settings
+)
+
+REM Suspend Power State
+IF "%STDIN%" EQU "2" (
+    SET UserConfig.PowerState=1
+    CALL :ClearBuffer
+    GOTO :Settings
+)
+
+REM Hibernation Power State
+IF "%STDIN%" EQU "3" (
+    SET UserConfig.PowerState=2
+    CALL :ClearBuffer
+    GOTO :Settings
+)
+
+REM Shutdown System
+IF "%STDIN%" EQU "4" (
+    SET UserConfig.PowerState=3
+    CALL :ClearBuffer
+    GOTO :Settings
+) ELSE (
+    REM Incorrect or invalid input
+    CALL :BadInput& GOTO :Settings_Update_PowerState
+)

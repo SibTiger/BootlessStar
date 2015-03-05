@@ -25,15 +25,17 @@ CALL :Operation_DisplayHeaderMessage
 
 REM ----
 REM Check if the restore data already exists in the restore directory, and any other steps necessary.
-CALL :Restore_Prepare || GOTO :Operation_TerminateWithError
+CALL :Restore_Prepare || (CALL :Operation_TerminateWithError& GOTO :EOF)
 
 REM ----
 REM Restore the data
-CALL :Restore_Extract || GOTO :Operation_TerminateWithError
+CALL :Restore_Extract || (CALL :Operation_TerminateWithError& GOTO :EOF)
 
 REM ----
 REM Completed, successfully finished
-GOTO :Operation_TerminateSuccessfully
+CALL :Operation_TerminateSuccessfully
+REM Finished
+GOTO :EOF
 
 
 

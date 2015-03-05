@@ -102,6 +102,9 @@ CALL :CompileLineFeeds
 TYPE %SourcePath%Operations_General.bat>> %Output%
 CALL :CompileLineFeeds
 
+TYPE %SourcePath%PowerState.bat>> %Output%
+CALL :CompileLineFeeds
+
 TYPE %SourcePath%CheckUpdates.bat>> %Output%
 CALL :CompileLineFeeds
 
