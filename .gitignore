@@ -1,0 +1,8 @@
+# Ignore the compiled builds
+# ---------------------------------
+
+/core/BootlessStar.bat
+/Projects/DeLorean/DeLorean.bat
+/Projects/DoomBuilder2/DoomBuilder2.bat
+/Projects/DoomBuilder64/DoomBuilder64.bat
+/Projects/GZDoomBuilder/GZDoomBuilder.bat
