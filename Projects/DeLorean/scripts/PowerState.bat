@@ -46,7 +46,7 @@ REM # ==========================================================================
 REM # Documentation: When called, this will manage the PowerState when set to 'disabled'
 REM # =============================================================================================
 :PowerState_DoNothing
-CALL :PowerState_DisplayMessage "Power State: disabled; skipping...." 0
+CALL :PowerState_DisplayMessage "Power State: disabled; skipping" 0
 GOTO :EOF
 
 
