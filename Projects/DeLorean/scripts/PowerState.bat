@@ -46,7 +46,7 @@ REM # ==========================================================================
 REM # Documentation: When called, this will manage the PowerState when set to 'disabled'
 REM # =============================================================================================
 :PowerState_DoNothing
-CALL :PowerState_DisplayMessage "Power State: disabled; skipping" 0
+CALL :PowerState_DisplayMessage "disabled; skipping" 0
 GOTO :EOF
 
 
@@ -55,7 +55,7 @@ REM # ==========================================================================
 REM # Documentation: When called, this will manage the PowerState when set to 'Suspend'
 REM # =============================================================================================
 :PowerState_SignalSuspend
-CALL :PowerState_DisplayMessage "Power State: Suspend" 1
+CALL :PowerState_DisplayMessage "Suspend" 1
 REM ----
 Rundll32.exe Powrprof.dll,SetSuspendState Sleep
 REM ----
@@ -67,7 +67,7 @@ REM # ==========================================================================
 REM # Documentation: When called, this will manage the PowerState when set to 'Hibernation'
 REM # =============================================================================================
 :PowerState_SignalHibernation
-CALL :PowerState_DisplayMessage "Power State: Hibernation" 1
+CALL :PowerState_DisplayMessage "Hibernation" 1
 REM ----
 SHUTDOWN /f /h
 REM ----
@@ -79,7 +79,7 @@ REM # ==========================================================================
 REM # Documentation: When called, this will manage the PowerState when set to 'Shutdown'
 REM # =============================================================================================
 :PowerState_SignalShutdown
-CALL :PowerState_DisplayMessage "Power State: Shutdown" 1
+CALL :PowerState_DisplayMessage "Shutdown" 1
 CALL :PowerState_AbortSignal
 REM ----
 SHUTDOWN /f /t %UserConfig.PowerStateGraceTime% /s
@@ -92,7 +92,7 @@ REM # ==========================================================================
 REM # Documentation: When called, this will only notify the user that the value for the Power State is unknown.
 REM # =============================================================================================
 :PowerState_BadValue
-CALL :PowerState_DisplayMessage "Power State: UNKNOWN_VALUE" 0
+CALL :PowerState_DisplayMessage "UNKNOWN_VALUE" 0
 GOTO :EOF
 
 
