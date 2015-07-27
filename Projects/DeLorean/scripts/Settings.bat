@@ -251,7 +251,7 @@ IF "%UserConfig.PowerState%" EQU "3" (
     SET "ProcessVarA=Shutdown"
     GOTO :EOF
 ) ELSE (
-    SET "ProcessVarA=!CRIT_ERR!: Couldn't translate variable 'PowerState' of value [%UserConfig.PowerState%]!
+    SET "ProcessVarA=!CRIT_ERR!: Couldn't translate variable 'PowerState' of value [%UserConfig.PowerState%]!"
 )
 EXIT /B 1
 
