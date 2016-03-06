@@ -1,3 +1,13 @@
+Version 1.5.4 [Commit 66da477]
+==========================
+--------------------------
+6 March. 2016
+----
+
+* Added detection for Git Command Line toolset
+
+
+
 Version 1.5.3 [revision 973]
 ==========================
 --------------------------
