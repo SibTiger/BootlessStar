@@ -137,6 +137,7 @@ REM  Toggle ECHO mode; view all of the code in Real Time
 SET DebugMode=False
 REM Detection identifiers
 SET Detect_SVN=False
+SET Detect_Git=False
 SET Detect_7Zip=False
 SET Detect_InnoSetup=False
 SET Detect_MinGW=False
@@ -617,6 +618,17 @@ IF %ERRORLEVEL% EQU 1 (
 ) ELSE (
     SET Detect_SVN=False
 )
+
+REM Git
+REM Besides checking the filesystem, just do an invoke check.
+GIT 2> NUL 1> NUL
+IF %ERRORLEVEL% EQU 1 (
+    SET Detect_Git=True
+) ELSE (
+    SET Detect_Git=False
+)
+
+
 
 REM Robocopy
 REM Besides checking the filesystem, just do an invoke check.

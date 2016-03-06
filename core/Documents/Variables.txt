@@ -135,6 +135,15 @@ Detect_SVN
 
 
 
+Detect_Git
+---------------
+    Description: This variable contains a status value of wither or not the Git command line tools exists on the host system.
+    Variable Type: Bool
+    Default Value: False
+---------------
+
+
+
 Detect_7Zip
 ---------------
     Description: This variable contains a status value of wither or not the 7Zip software exists on the host system.
