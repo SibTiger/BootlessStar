@@ -62,6 +62,7 @@ CALL :Operation_Display_IncomingTaskSubLevelMSG "Generating Exclusion list"
 (ECHO "%USERNAME%\ntuser.ini")>> "%~1"
 (ECHO "%USERNAME%\SkyDrive")>> "%~1"
 (ECHO "%USERNAME%\OneDrive")>> "%~1"
+(ECHO "%USERNAME%\Tracing")>> "%~1"
 GOTO :EOF
 
 
