@@ -1,3 +1,31 @@
+Version 1.5.5 [Commit 526e879]
+==========================
+--------------------------
+26 March. 2024
+----
+
+* Use quotation on output redirections for STDOUTs
+    Without the quotations, if a file path contains any spaces - then the output would not be correct, yet the left overs would be considered an additional arguments that would be invalid.  This would cause the program to crash as a result.
+* When initializing %SourcePath% and %Output%, encapsulate it with quotations.
+    This will assure that any spaces introduced into the string will be properly part of the assignment.
+* Use quotations on %Output% when inspecting if the assigned path exists.
+    Without this, the IF extCMD would see the string with spaces (or any special characters) as a command\instruction when the value is seen as a true condition.
+* When using the DEL extCMD, %Output% needs to be quoted
+    We do NOT need a Bumblebee moment....  oh dear, what have I done :'(....
+    https://github.com/MrMEEE/bumblebee-Old-and-abbandoned/issues/123
+* Added Tracing to the ignore list in the DeLorean Project Module.
+    I could be grossly wrong, but it seems that %UserProfile%\Tracing\ is intended to hold data for Win10 Skype instance?  The file is locked by the application, which will cause the backup operation to fail.
+* Applied a few delimiters to the list
+    Windows default time\date schemes can contain spaces within the date format, and time contains a comma for milliseconds.  Previously, this could break the %core.Time% and %core.Date% expectations.
+* Upped the version for Bootless Star Core, GZDB, DB64, DB2, and DeLorean.
+    Bootless Star Core Ver: 1.5.5
+    GZDoom Builder Ver: 1.6.4
+    Doom Builder 64 Ver: 1.5.4
+    Doom Builder 2 Ver: 1.5.4
+    DeLorean Ver: 5.3
+
+
+
 Version 1.5.4 [Commit 66da477]
 ==========================
 --------------------------
