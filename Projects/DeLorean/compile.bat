@@ -166,7 +166,7 @@ REM Verify File
 REM Verify that the file was generated.
 REM --------------------------------------------
 :Verify
-IF NOT EXIST %Output% (
+IF NOT EXIST "%Output%" (
     GOTO VerifyError
 ) ELSE (
     GOTO SubTermination
