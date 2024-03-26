@@ -148,7 +148,7 @@ REM Expunge Previous
 REM Thrash the previously built script.
 REM --------------------------------------------
 :Expunge
-DEL /F /Q %Output% || GOTO ExpungeError
+DEL /F /Q "%Output%" || GOTO ExpungeError
 GOTO SubTermination
 
 
