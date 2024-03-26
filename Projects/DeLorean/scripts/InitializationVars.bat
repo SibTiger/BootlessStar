@@ -57,8 +57,8 @@ REM # ==========================================================================
 :Initialization_IdentifiersStatic
 REM Static Variables
 SET ProjectName=DeLorean
-SET ProjectVersion=5.2
-SET ReleaseDate=5.March.2015
+SET ProjectVersion=5.3
+SET ReleaseDate=26.March.2024
 REM This sets up the archive based name, this is used for the backup process.
 SET "Backup_FileName=Backup-[%ComputerName%]_%core.Date%"
 REM The general output file name for the restore and backup process

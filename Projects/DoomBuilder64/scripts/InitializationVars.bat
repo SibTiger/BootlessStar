@@ -51,8 +51,8 @@ REM # ==========================================================================
 REM Static Variables
 SET ProjectName=Doom Builder 64
 SET ProjectNameShort=DB64
-SET ProjectVersion=1.5.3
-SET ReleaseDate=6.June.2014
+SET ProjectVersion=1.5.4
+SET ReleaseDate=26.March.2024
 SET ProjectNameCompact=DoomBuilder64
 REM Used as the filename and directory when compiling the project.  This is built in the compiling protocol, just let it as 'UNKNOWN' here and change it later.
 SET FileName=UNKNOWN

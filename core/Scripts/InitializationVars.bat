@@ -95,8 +95,8 @@ REM # Documentation: This function houses static declarations for the core envir
 REM # =============================================================================================
 :EnvironmentSetup_Core
 SET ProgramName=Bootless Star
-SET ProgramVersion=1.5.4
-SET ProgramReleaseDate=6.March.2016
+SET ProgramVersion=1.5.5
+SET ProgramReleaseDate=26.March.2024
 SET CodeName=Aditi
 REM Program Title
 SET core.Title=%ProgramName% %ProgramVersion% ^(%CodeName%^)
