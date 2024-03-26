@@ -42,91 +42,91 @@ REM Compile all of the scripts into one ASCII file.
 REM --------------------------------------------
 :Compile
 ECHO Generating file: %Filename%
-TYPE %SourcePath%Header.bat> %Output%
+TYPE %SourcePath%Header.bat> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%LegalCrap.bat>> %Output%
+TYPE %SourcePath%LegalCrap.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Main.bat>> %Output%
+TYPE %SourcePath%Main.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Prerequisites.bat>> %Output%
+TYPE %SourcePath%Prerequisites.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Global.bat>> %Output%
+TYPE %SourcePath%Global.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Dashboard.bat>> %Output%
+TYPE %SourcePath%Dashboard.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Dashboard_Detection.bat>> %Output%
+TYPE %SourcePath%Dashboard_Detection.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%InitializationVars.bat>> %Output%
+TYPE %SourcePath%InitializationVars.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%MainMenu.bat>> %Output%
+TYPE %SourcePath%MainMenu.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Restore.bat>> %Output%
+TYPE %SourcePath%Restore.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Restore_Menu.bat>> %Output%
+TYPE %SourcePath%Restore_Menu.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Restore_Prepare.bat>> %Output%
+TYPE %SourcePath%Restore_Prepare.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Restore_Extract.bat>> %Output%
+TYPE %SourcePath%Restore_Extract.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Backup.bat>> %Output%
+TYPE %SourcePath%Backup.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Backup_Prepare.bat>> %Output%
+TYPE %SourcePath%Backup_Prepare.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Backup_FlushTempDir.bat>> %Output%
+TYPE %SourcePath%Backup_FlushTempDir.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Backup_Compact.bat>> %Output%
+TYPE %SourcePath%Backup_Compact.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Backup_Test.bat>> %Output%
+TYPE %SourcePath%Backup_Test.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Backup_CheckResources.bat>> %Output%
+TYPE %SourcePath%Backup_CheckResources.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Operations_General.bat>> %Output%
+TYPE %SourcePath%Operations_General.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%PowerState.bat>> %Output%
+TYPE %SourcePath%PowerState.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CheckUpdates.bat>> %Output%
+TYPE %SourcePath%CheckUpdates.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Settings.bat>> %Output%
+TYPE %SourcePath%Settings.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%UserPreset.bat>> %Output%
+TYPE %SourcePath%UserPreset.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%QuotesDatabase.bat>> %Output%
+TYPE %SourcePath%QuotesDatabase.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ViewDirectory.bat>> %Output%
+TYPE %SourcePath%ViewDirectory.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ErrorManager.bat>> %Output%
+TYPE %SourcePath%ErrorManager.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Cleanup.bat>> %Output%
+TYPE %SourcePath%Cleanup.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Terminator.bat>> %Output%
+TYPE %SourcePath%Terminator.bat>> "%Output%"
 
 GOTO SubTermination
 
@@ -134,11 +134,11 @@ GOTO SubTermination
 
 :CompileLineFeeds
 REM This is useful to separate the files
-ECHO.>> %Output%
-ECHO.>> %Output%
-ECHO.>> %Output%
-ECHO.>> %Output%
-ECHO.>> %Output%
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
 GOTO SubTermination
 
 

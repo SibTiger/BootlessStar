@@ -64,9 +64,9 @@ GOTO :EOF
 
 
 :CompileProject_CheckResources_ProjectTarget_ERRLog
-(ECHO !ERR_CRIT!: Could not locate the %ProjectName% project!) >> %STDOUT%
-(ECHO This program can not continue until this issue has been resolved!) >> %STDOUT%
-(ECHO.) >> %STDOUT%
+(ECHO !ERR_CRIT!: Could not locate the %ProjectName% project!) >> "%STDOUT%"
+(ECHO This program can not continue until this issue has been resolved!) >> "%STDOUT%"
+(ECHO.) >> "%STDOUT%"
 GOTO :EOF
 
 
@@ -171,11 +171,11 @@ REM # Parameters: [{string} DefinedFile]
 REM # Documentation: When a resource is not found within the filesystem, this function will log the error.
 REM # =============================================================================================
 :CompileProject_CheckResources_CheckTargets_Process_ERRLog
-(ECHO !ERR_CRIT!: Could not find file:) >> %STDOUT%
-(ECHO   %~1) >> %STDOUT%
-(ECHO.) >> %STDOUT%
-(ECHO This program can not continue until this issue has been resolved!  Check for program updates or check to make sure that the location is properly defined.) >> %STDOUT%
-(ECHO.) >> %STDOUT%
+(ECHO !ERR_CRIT!: Could not find file:) >> "%STDOUT%"
+(ECHO   %~1) >> "%STDOUT%"
+(ECHO.) >> "%STDOUT%"
+(ECHO This program can not continue until this issue has been resolved!  Check for program updates or check to make sure that the location is properly defined.) >> "%STDOUT%"
+(ECHO.) >> "%STDOUT%"
 GOTO :EOF
 
 
@@ -232,9 +232,9 @@ GOTO :EOF
 
 
 :CompileProject_CheckOutput_Scan_ERRLog
-(ECHO !ERR_CRIT!: There is no proper output!) >> %STDOUT%
-(ECHO   After the program has compiled the %ProjectName% project, it will not be available for the user as it will be overwritten in the SVN directory.  Please review the settings and make sure that the compiled output will be either mirrored or in an compact file.) >> %STDOUT%
-(ECHO.) >> %STDOUT%
+(ECHO !ERR_CRIT!: There is no proper output!) >> "%STDOUT%"
+(ECHO   After the program has compiled the %ProjectName% project, it will not be available for the user as it will be overwritten in the SVN directory.  Please review the settings and make sure that the compiled output will be either mirrored or in an compact file.) >> "%STDOUT%"
+(ECHO.) >> "%STDOUT%"
 GOTO :EOF
 
 
@@ -267,9 +267,9 @@ GOTO :EOF
 
 
 :CompileProject_CheckResources_7Zip_ERRLog
-(ECHO !ERR_CRIT!: Could not find 7Zip software!) >> %STDOUT%
-(ECHO This program can not continue until this issue has been resolved!) >> %STDOUT%
-(ECHO.) >> %STDOUT%
+(ECHO !ERR_CRIT!: Could not find 7Zip software!) >> "%STDOUT%"
+(ECHO This program can not continue until this issue has been resolved!) >> "%STDOUT%"
+(ECHO.) >> "%STDOUT%"
 GOTO :EOF
 
 
@@ -302,9 +302,9 @@ GOTO :EOF
 
 
 :CompileProject_CheckResources_SVN_ERRLog
-(ECHO !ERR_CRIT!: Could not find Subversion CommandLine Tools!) >> %STDOUT%
-(ECHO This program can not continue until this issue has been resolved!) >> %STDOUT%
-(ECHO.) >> %STDOUT%
+(ECHO !ERR_CRIT!: Could not find Subversion CommandLine Tools!) >> "%STDOUT%"
+(ECHO This program can not continue until this issue has been resolved!) >> "%STDOUT%"
+(ECHO.) >> "%STDOUT%"
 GOTO :EOF
 
 
@@ -337,9 +337,9 @@ GOTO :EOF
 
 
 :CompileProject_CheckResources_Inno_ERRLog
-(ECHO !ERR_CRIT!: Could not find Inno Setup Builder!) >> %STDOUT%
-(ECHO This program can not continue until this issue has been resolved!) >> %STDOUT%
-(ECHO.) >> %STDOUT%
+(ECHO !ERR_CRIT!: Could not find Inno Setup Builder!) >> "%STDOUT%"
+(ECHO This program can not continue until this issue has been resolved!) >> "%STDOUT%"
+(ECHO.) >> "%STDOUT%"
 GOTO :EOF
 
 
@@ -371,9 +371,9 @@ GOTO :EOF
 
 
 :CompileProject_CheckResources_VisualStudio_ERRLog
-(ECHO !ERR_CRIT!: Could not find the resources from Microsoft Visual Studio [ %VisualStudioNiceName% ]!) >> %STDOUT%
-(ECHO This program can not continue until this issue has been resolved!) >> %STDOUT%
-(ECHO.) >> %STDOUT%
+(ECHO !ERR_CRIT!: Could not find the resources from Microsoft Visual Studio [ %VisualStudioNiceName% ]!) >> "%STDOUT%"
+(ECHO This program can not continue until this issue has been resolved!) >> "%STDOUT%"
+(ECHO.) >> "%STDOUT%"
 GOTO :EOF
 
 

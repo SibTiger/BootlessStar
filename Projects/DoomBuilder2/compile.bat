@@ -42,103 +42,103 @@ REM Compile all of the scripts into one ASCII file.
 REM --------------------------------------------
 :Compile
 ECHO Generating file: %Filename%
-TYPE %SourcePath%Header.bat> %Output%
+TYPE %SourcePath%Header.bat> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%LegalCrap.bat>> %Output%
+TYPE %SourcePath%LegalCrap.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Main.bat>> %Output%
+TYPE %SourcePath%Main.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Prerequisites.bat>> %Output%
+TYPE %SourcePath%Prerequisites.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Global.bat>> %Output%
+TYPE %SourcePath%Global.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Dashboard.bat>> %Output%
+TYPE %SourcePath%Dashboard.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Dashboard_Detection.bat>> %Output%
+TYPE %SourcePath%Dashboard_Detection.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%InitializationVars.bat>> %Output%
+TYPE %SourcePath%InitializationVars.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%VisualStudio_Detection.bat>> %Output%
+TYPE %SourcePath%VisualStudio_Detection.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%MainMenu.bat>> %Output%
+TYPE %SourcePath%MainMenu.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CheckUpdates.bat>> %Output%
+TYPE %SourcePath%CheckUpdates.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Settings.bat>> %Output%
+TYPE %SourcePath%Settings.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%UserPreset.bat>> %Output%
+TYPE %SourcePath%UserPreset.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ViewDirectory.bat>> %Output%
+TYPE %SourcePath%ViewDirectory.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject.bat>> %Output%
+TYPE %SourcePath%CompileProject.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_7ZipControl.bat>> %Output%
+TYPE %SourcePath%CompileProject_7ZipControl.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_CheckResources.bat>> %Output%
+TYPE %SourcePath%CompileProject_CheckResources.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_CleanUp.bat>> %Output%
+TYPE %SourcePath%CompileProject_CleanUp.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_DB2Core.bat>> %Output%
+TYPE %SourcePath%CompileProject_DB2Core.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_DB2HelpDocs.bat>> %Output%
+TYPE %SourcePath%CompileProject_DB2HelpDocs.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_FileName.bat>> %Output%
+TYPE %SourcePath%CompileProject_FileName.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_General.bat>> %Output%
+TYPE %SourcePath%CompileProject_General.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_InnoSetupBuilder.bat>> %Output%
+TYPE %SourcePath%CompileProject_InnoSetupBuilder.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_LocalProjectDir.bat>> %Output%
+TYPE %SourcePath%CompileProject_LocalProjectDir.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_InternalProjectVerUpdate.bat>> %Output%
+TYPE %SourcePath%CompileProject_InternalProjectVerUpdate.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_MSVSEnvironmentControl.bat>> %Output%
+TYPE %SourcePath%CompileProject_MSVSEnvironmentControl.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_PluginDriver.bat>> %Output%
+TYPE %SourcePath%CompileProject_PluginDriver.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_Plugins.bat>> %Output%
+TYPE %SourcePath%CompileProject_Plugins.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_SubversionControl.bat>> %Output%
+TYPE %SourcePath%CompileProject_SubversionControl.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompileProject_WindowsExplorer.bat>> %Output%
+TYPE %SourcePath%CompileProject_WindowsExplorer.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ErrorManager.bat>> %Output%
+TYPE %SourcePath%ErrorManager.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Cleanup.bat>> %Output%
+TYPE %SourcePath%Cleanup.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Terminator.bat>> %Output%
+TYPE %SourcePath%Terminator.bat>> "%Output%"
 
 GOTO SubTermination
 
@@ -146,11 +146,11 @@ GOTO SubTermination
 
 :CompileLineFeeds
 REM This is useful to separate the files
-ECHO.>> %Output%
-ECHO.>> %Output%
-ECHO.>> %Output%
-ECHO.>> %Output%
-ECHO.>> %Output%
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
 GOTO SubTermination
 
 

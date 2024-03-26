@@ -35,7 +35,7 @@ REM # Parameters:
 REM #   [string] TaskName
 REM # =============================================================================================
 :Operation_Display_IncomingTaskSubLevelMSG
-(ECHO %~1) >> %STDOUT%
+(ECHO %~1) >> "%STDOUT%"
 ECHO    %~1
 GOTO :EOF
 
@@ -47,10 +47,10 @@ REM # Parameters:
 REM #   [string] TaskName
 REM # =============================================================================================
 :Operation_Display_IncomingTaskLog
-(ECHO Performing Task:) >> %STDOUT%
-(ECHO   %~1) >> %STDOUT%
-(ECHO.) >> %STDOUT%
-(ECHO.) >> %STDOUT%
+(ECHO Performing Task:) >> "%STDOUT%"
+(ECHO   %~1) >> "%STDOUT%"
+(ECHO.) >> "%STDOUT%"
+(ECHO.) >> "%STDOUT%"
 GOTO :EOF
 
 
@@ -122,7 +122,7 @@ REM ----
 (ECHO %SeparatorSmall%)>> "%STDOUT%"
 (ECHO %Separator%)>> "%STDOUT%"
 (ECHO Finished Executing Task:)>> "%STDOUT%"
-(ECHO   %~1)>> %STDOUT%
+(ECHO   %~1)>> "%STDOUT%"
 (ECHO Time: %Time%   -   Date: %Date%)>> "%STDOUT%"
 (ECHO Project Name: %ProjectName%   -   Module Version: %ProjectVersion%)>> "%STDOUT%"
 (ECHO %SeparatorLong%)>> "%STDOUT%"

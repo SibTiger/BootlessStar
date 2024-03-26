@@ -42,106 +42,106 @@ REM Compile all of the scripts into one ASCII file.
 REM --------------------------------------------
 :Compile
 ECHO Generating file: %Filename%
-TYPE %SourcePath%header.bat> %Output%
+TYPE %SourcePath%header.bat> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%LegalCrap.bat>> %Output%
+TYPE %SourcePath%LegalCrap.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%StartUp_Driver.bat>> %Output%
+TYPE %SourcePath%StartUp_Driver.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CompatibilityCheck.bat>> %Output%
+TYPE %SourcePath%CompatibilityCheck.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%GlobalFunctions.bat>> %Output%
+TYPE %SourcePath%GlobalFunctions.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Dashboard.bat>> %Output%
+TYPE %SourcePath%Dashboard.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%EnvironmentHooking.bat>> %Output%
+TYPE %SourcePath%EnvironmentHooking.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%InitializationVars.bat>> %Output%
+TYPE %SourcePath%InitializationVars.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%MainMenu.bat>> %Output%
+TYPE %SourcePath%MainMenu.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%DocumentsManager.bat>> %Output%
+TYPE %SourcePath%DocumentsManager.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%CheckUpdates.bat>> %Output%
+TYPE %SourcePath%CheckUpdates.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ProjectLoader.bat>> %Output%
+TYPE %SourcePath%ProjectLoader.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ExternalModuleLauncher.bat>> %Output%
+TYPE %SourcePath%ExternalModuleLauncher.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanelMenu.bat>> %Output%
+TYPE %SourcePath%ControlPanelMenu.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanelAdvancedMenu.bat>> %Output%
+TYPE %SourcePath%ControlPanelAdvancedMenu.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%UserConfigManagement.bat>> %Output%
+TYPE %SourcePath%UserConfigManagement.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_Logging.bat>> %Output%
+TYPE %SourcePath%ControlPanel_Logging.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_Copy.bat>> %Output%
+TYPE %SourcePath%ControlPanel_Copy.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_CopyBehaviorConfigration.bat>> %Output%
+TYPE %SourcePath%ControlPanel_CopyBehaviorConfigration.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_intCMDCopyParameters.bat>> %Output%
+TYPE %SourcePath%ControlPanel_intCMDCopyParameters.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_XCopyParameters.bat>> %Output%
+TYPE %SourcePath%ControlPanel_XCopyParameters.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_RoboCopyParameters.bat>> %Output%
+TYPE %SourcePath%ControlPanel_RoboCopyParameters.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_RoboCopyParameters-Extended.bat>> %Output%
+TYPE %SourcePath%ControlPanel_RoboCopyParameters-Extended.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_Bell.bat>> %Output%
+TYPE %SourcePath%ControlPanel_Bell.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_DirectorySetup.bat>> %Output%
+TYPE %SourcePath%ControlPanel_DirectorySetup.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_GeneralProgramSettings.bat>> %Output%
+TYPE %SourcePath%ControlPanel_GeneralProgramSettings.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_WindowsExplorer.bat>> %Output%
+TYPE %SourcePath%ControlPanel_WindowsExplorer.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_Priority.bat>> %Output%
+TYPE %SourcePath%ControlPanel_Priority.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_7Zip.bat>> %Output%
+TYPE %SourcePath%ControlPanel_7Zip.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_7ZipConfiguration.bat>> %Output%
+TYPE %SourcePath%ControlPanel_7ZipConfiguration.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_ModulesExecuteWindowSharing.bat>> %Output%
+TYPE %SourcePath%ControlPanel_ModulesExecuteWindowSharing.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%ControlPanel_DashboardViewer.bat>> %Output%
+TYPE %SourcePath%ControlPanel_DashboardViewer.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%DebugTool.bat>> %Output%
+TYPE %SourcePath%DebugTool.bat>> "%Output%"
 CALL :CompileLineFeeds
 
-TYPE %SourcePath%Kill.bat>> %Output%
+TYPE %SourcePath%Kill.bat>> "%Output%"
 
 GOTO SubTermination
 
@@ -149,11 +149,11 @@ GOTO SubTermination
 
 :CompileLineFeeds
 REM This is useful to separate the files
-ECHO.>> %Output%
-ECHO.>> %Output%
-ECHO.>> %Output%
-ECHO.>> %Output%
-ECHO.>> %Output%
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
+ECHO.>> "%Output%"
 GOTO SubTermination
 
 
