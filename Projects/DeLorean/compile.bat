@@ -28,8 +28,8 @@ REM Setup the variables we'll need for this program.
 REM --------------------------------------------
 :Variables
 SET Filename=DeLorean.bat
-SET SourcePath=.\Scripts\
-SET Output=.\%Filename%
+SET "SourcePath=.\Scripts\"
+SET "Output=.\%Filename%"
 SET ExitCode=1
 SET Error=False
 GOTO SubTermination
