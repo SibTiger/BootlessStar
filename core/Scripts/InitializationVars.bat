@@ -767,9 +767,9 @@ REM # ==========================================================================
 :EnvironmentSetup_Setup_Time-and-Date
 REM These are special statements that are used to clean up the date string so that information can be used within the filesystem as a file or directory.
 REM Date
-FOR /F "tokens=1-3 delims=/." %%a IN ("%DATE%") DO SET "core.Date=%%a_%%b_%%c"
+FOR /F "tokens=1-3 delims=/. " %%a IN ("%DATE%") DO SET "core.Date=%%a_%%b_%%c"
 REM Time
-FOR /F "tokens=1-3 delims=:." %%a IN ("%TIME%") DO SET "core.Time=%%a-%%b-%%c"
+FOR /F "tokens=1-3 delims=:.," %%a IN ("%TIME%") DO SET "core.Time=%%a-%%b-%%c"
 GOTO :EOF
 
 
