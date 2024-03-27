@@ -763,11 +763,14 @@ GOTO :EOF
 
 REM # =============================================================================================
 REM # Documentation: Filter the date and time and store their filtered value into variables.  This will allow other programs to use date and time as filenames.
+REM # NOTE: It seems that the 'DATE' will contain the 'Weekday' if the Region Format is set as English.  All other regions does not contain the weekday string.
+REM #           For example, German will only contain DD.MM.YY, while United States English will contain: DDD MM/DD/YY.
+REM #           While yes, all formatting is user region setting dependent, the weekday is added regardless - so long as the region format is set as 'English'.
 REM # =============================================================================================
 :EnvironmentSetup_Setup_Time-and-Date
 REM These are special statements that are used to clean up the date string so that information can be used within the filesystem as a file or directory.
 REM Date
-FOR /F "tokens=1-3 delims=/. " %%a IN ("%DATE%") DO SET "core.Date=%%a_%%b_%%c"
+FOR /F "tokens=2-4 delims=/. " %%a IN ("%DATE%") DO SET "core.Date=%%a_%%b_%%c"
 REM Time
 FOR /F "tokens=1-3 delims=:.," %%a IN ("%TIME%") DO SET "core.Time=%%a-%%b-%%c"
 GOTO :EOF
