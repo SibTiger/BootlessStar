@@ -1,4 +1,4 @@
-Version 1.5.5 [Commit 526e879]
+Version 1.5.5 [Commit 70183ec]
 ==========================
 --------------------------
 26 March. 2024
@@ -17,6 +17,8 @@ Version 1.5.5 [Commit 526e879]
     I could be grossly wrong, but it seems that %UserProfile%\Tracing\ is intended to hold data for Win10 Skype instance?  The file is locked by the application, which will cause the backup operation to fail.
 * Applied a few delimiters to the list
     Windows default time\date schemes can contain spaces within the date format, and time contains a comma for milliseconds.  Previously, this could break the %core.Time% and %core.Date% expectations.
+* Revised the %core.Date% to use the English region time and date formatting
+    When I was developing this program, I used the German Time and Date region formatting.  With using the German formatting, the %DATE% or 'DATE /T' would provide this formatting: DD.MM.YY.  Yet, the English formatting is: DDD MM/DD/YYYY.  Because of this inconsistency, and no real easy way to quickly fix this, the regional formatting will have to be set as 'English'. With that, the %core.Date% will contain: Day, Month, and Year - but still following the user's English regional settings.
 * Upped the version for Bootless Star Core, GZDB, DB64, DB2, and DeLorean.
     Bootless Star Core Ver: 1.5.5
     GZDoom Builder Ver: 1.6.4
